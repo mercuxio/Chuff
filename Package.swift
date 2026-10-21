@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "RailwayMonitor",
+    name: "Chuff",
     platforms: [.macOS(.v14)],
     dependencies: [
         // Sparkle does the update check, as in Squiggle. SwiftPM links it but
@@ -12,9 +12,9 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "RailwayMonitor",
+            name: "Chuff",
             dependencies: [.product(name: "Sparkle", package: "Sparkle")],
-            path: "Sources/RailwayMonitor"
+            path: "Sources/Chuff"
         )
     ]
 )

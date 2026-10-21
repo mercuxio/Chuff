@@ -1,5 +1,5 @@
 #!/bin/bash
-# Builds RailwayMonitor.app in this folder.
+# Builds Chuff.app in this folder.
 #   ./build.sh            build only
 #   ./build.sh --install  build, copy to /Applications and launch
 #
@@ -11,7 +11,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 ROOT="$(pwd)"
 
-APP_NAME="RailwayMonitor"
+APP_NAME="Chuff"
 APP="$ROOT/$APP_NAME.app"
 
 echo "→ Compiling (release)…"

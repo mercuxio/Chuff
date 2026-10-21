@@ -1,10 +1,10 @@
-# Railway Monitor
+# Chuff
 
 A macOS menu bar light for [Railway](https://railway.com)'s platform status.
 One dot next to the clock turns green, amber, or red, and the dropdown shows
 which part of Railway is having trouble.
 
-Railway Monitor is built to be left alone. It makes one small request a
+Chuff is built to be left alone. It makes one small request a
 minute, stops while the display is asleep, and keeps nothing on disk except
 your settings.
 
@@ -14,23 +14,23 @@ Requires **macOS 14 or later** on **Apple silicon**.
 
 ## Install
 
-**Download the release.** Get `RailwayMonitor-1.0.0.zip` from
-[Releases](https://github.com/mercuxio/RailwayMonitor/releases), unzip it, and
-drag `RailwayMonitor.app` into `/Applications`.
+**Download the release.** Get `Chuff-1.0.0.zip` from
+[Releases](https://github.com/mercuxio/Chuff/releases), unzip it, and
+drag `Chuff.app` into `/Applications`.
 
 The app is ad-hoc signed, not notarized, because I don't pay for an Apple
 Developer account. macOS quarantines downloaded apps that aren't notarized, so
-the first launch fails with "Railway Monitor is damaged and can't be opened" or
+the first launch fails with "Chuff is damaged and can't be opened" or
 "cannot be verified". The app isn't damaged. Clear the quarantine flag once:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/RailwayMonitor.app
+xattr -dr com.apple.quarantine /Applications/Chuff.app
 ```
 
 Then open it as usual. If you'd rather not run that on a stranger's app, which
 is fair, you can build it yourself instead; see [Building](#building).
 
-Railway Monitor has no Dock icon and doesn't appear in the app switcher. Its
+Chuff has no Dock icon and doesn't appear in the app switcher. Its
 whole interface is the menu bar item, and you quit it from the dropdown.
 
 ---
@@ -74,7 +74,7 @@ disk.
 
 ## Where the status comes from
 
-Railway Monitor reads `https://api.railwaystatus.com/status`, the JSON feed
+Chuff reads `https://api.railwaystatus.com/status`, the JSON feed
 behind [status.railway.com](https://status.railway.com). It needs no API key and
 no account, and it's unofficial: Railway publishes no contract for it and can
 change it without notice. Decoding is deliberately lenient, so a new or missing
@@ -97,7 +97,7 @@ incidents, trust the [status page](https://status.railway.com).
 ./build.sh
 ```
 
-`build.sh` compiles a release build and assembles `RailwayMonitor.app` in the
+`build.sh` compiles a release build and assembles `Chuff.app` in the
 repo folder. SwiftPM only produces a bare executable and has no idea what an
 app bundle is, so the script builds the folder layout, `Info.plist`, icon,
 embedded `Sparkle.framework`, and signature itself. The signature is ad-hoc:
@@ -115,7 +115,7 @@ fails to start on a machine with only the Command Line Tools.
 
 | Path | What lives there |
 | --- | --- |
-| `Sources/RailwayMonitor` | The menu bar app: the status store and polling, the dropdown, the settings window, and the updater. |
+| `Sources/Chuff` | The menu bar app: the status store and polling, the dropdown, the settings window, and the updater. |
 | `Resources/Info.plist` | Bundle metadata, including the Sparkle feed URL and public key. |
 | `Tools/GenerateIcon.swift` | Writes the app icon as an Icon Composer bundle, `Resources/AppIcon.icon`. `./scripts/make-icon.sh` compiles it with Xcode's `actool` into the committed `Resources/Assets.car` and `AppIcon.icns`. |
 | `appcast.xml` | The update feed installed copies read from the `main` branch. `./scripts/appcast.sh` adds a signed entry for the current version after a release is packaged. |
@@ -125,7 +125,7 @@ fails to start on a machine with only the Command Line Tools.
 1. Bump `CFBundleShortVersionString` and `CFBundleVersion` in
    `Resources/Info.plist`, and add a section to [CHANGELOG.md](CHANGELOG.md).
 2. `./build.sh`
-3. `mkdir -p build && ditto -c -k --keepParent RailwayMonitor.app build/RailwayMonitor-<version>.zip`
+3. `mkdir -p build && ditto -c -k --keepParent Chuff.app build/Chuff-<version>.zip`
 4. `./scripts/appcast.sh`, which signs the zip with the EdDSA key in the login
    Keychain and adds an entry to `appcast.xml`.
 5. Create the GitHub release `v<version>` with that zip attached, then commit
@@ -136,7 +136,7 @@ upload.
 
 ## Status
 
-Version 1.0.0. Railway Monitor isn't affiliated with or endorsed by Railway.
+Version 1.0.0. Chuff isn't affiliated with or endorsed by Railway.
 
 ## License
 

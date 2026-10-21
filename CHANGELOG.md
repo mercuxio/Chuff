@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Railway Monitor are recorded here. The format follows
+All notable changes to Chuff are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
@@ -22,5 +22,5 @@ First release.
 - Polling that pauses while the display sleeps and refreshes on wake.
 - Self-updates through Sparkle, verified against an EdDSA signature.
 
-[Unreleased]: https://github.com/mercuxio/RailwayMonitor/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/mercuxio/RailwayMonitor/releases/tag/v1.0.0
+[Unreleased]: https://github.com/mercuxio/Chuff/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/mercuxio/Chuff/releases/tag/v1.0.0

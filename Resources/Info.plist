@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>Railway Monitor</string>
+	<string>Chuff</string>
 	<key>CFBundleDisplayName</key>
-	<string>Railway Monitor</string>
+	<string>Chuff</string>
 	<key>CFBundleExecutable</key>
-	<string>RailwayMonitor</string>
+	<string>Chuff</string>
 	<!-- An LSUIElement app has no Dock tile, but Finder, System Settings >
 	     Login Items and Sparkle's update window still show the icon.
 	     Assets.car (macOS 26+) and AppIcon.icns (fallback) come from
@@ -17,7 +17,7 @@
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.houlanyit.RailwayMonitor</string>
+	<string>com.houlanyit.Chuff</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -46,7 +46,7 @@
 	     update whose signature does not match. Not sandboxed, so no
 	     SUEnableInstallerLauncherService. -->
 	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/mercuxio/RailwayMonitor/main/appcast.xml</string>
+	<string>https://raw.githubusercontent.com/mercuxio/Chuff/main/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>10VIpTMQm9DmV5p6kNgsHBI3Fwd06CSUKhUM8HMhbis=</string>
 	<key>SUEnableAutomaticChecks</key>

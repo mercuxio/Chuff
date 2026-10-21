@@ -24,7 +24,7 @@ enum FooterCommand: CaseIterable {
         case .openStatusPage: return "Open status.railway.com"
         case .buyCoffee: return "Buy me a coffee"
         case .trackAll: return "Track all groups"
-        case .quit: return "Quit Railway Monitor"
+        case .quit: return "Quit Chuff"
         }
     }
 
@@ -188,7 +188,7 @@ final class SpinningFooterButton: FooterButton {
         spin.duration = Self.turnSeconds
         spin.timingFunction = CAMediaTimingFunction(name: .linear)
         spin.repeatCount = .infinity
-        spinner.add(spin, forKey: "railwaymonitor.refresh.spin")
+        spinner.add(spin, forKey: "chuff.refresh.spin")
 
         layer?.addSublayer(spinner)
     }

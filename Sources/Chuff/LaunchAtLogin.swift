@@ -37,7 +37,7 @@ enum LoginItemState: Equatable {
         switch self {
         case .on, .off: return nil
         case .needsApproval: return "Turned off in System Settings."
-        case .unavailable: return "Available when Railway Monitor is running from an app bundle."
+        case .unavailable: return "Available when Chuff is running from an app bundle."
         }
     }
 }

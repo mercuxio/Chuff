@@ -26,7 +26,7 @@ final class SettingsWindowController: NSWindowController {
         // dead ones so only close remains (as Squiggle does).
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
         window.standardWindowButton(.zoomButton)?.isHidden = true
-        window.title = "Railway Monitor Settings"
+        window.title = "Chuff Settings"
         window.isReleasedWhenClosed = false
         super.init(window: window)
         window.center()
@@ -88,7 +88,7 @@ final class SettingsModel: ObservableObject {
 
     func checkForUpdates() { updater.checkNow() }
 
-    var versionLine: String? { version.map { "Railway Monitor \($0)" } }
+    var versionLine: String? { version.map { "Chuff \($0)" } }
 
     // MARK: Open at Login (as Squiggle)
 
