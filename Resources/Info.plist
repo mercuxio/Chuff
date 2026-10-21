@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>Railway Monitor</string>
+	<key>CFBundleDisplayName</key>
+	<string>Railway Monitor</string>
+	<key>CFBundleExecutable</key>
+	<string>RailwayMonitor</string>
+	<!-- An LSUIElement app has no Dock tile, but Finder, System Settings >
+	     Login Items and Sparkle's update window still show the icon.
+	     Assets.car (macOS 26+) and AppIcon.icns (fallback) come from
+	     scripts/make-icon.sh. -->
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.houlanyit.RailwayMonitor</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<!-- The user-facing version shown at the foot of Settings. -->
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<!-- Build counter; Sparkle compares this (sparkle:version) to decide what
+	     is newer, so bump it with every release. -->
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<!-- Menubar-only: no Dock icon, no app switcher entry. -->
+	<key>LSUIElement</key>
+	<true/>
+	<!-- Sparkle, set up the same way as Squiggle. The appcast is read from the
+	     main branch of the GitHub repo, so scripts/appcast.sh ends with
+	     "commit and push".
+
+	     SUPublicEDKey is the same public key Squiggle and Sniffcast use; its
+	     private half lives in the login keychain (created once by Sparkle's
+	     generate_keys), so one key signs all three apps. Sparkle refuses any
+	     update whose signature does not match. Not sandboxed, so no
+	     SUEnableInstallerLauncherService. -->
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/mercuxio/RailwayMonitor/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>10VIpTMQm9DmV5p6kNgsHBI3Fwd06CSUKhUM8HMhbis=</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+</dict>
+</plist>
